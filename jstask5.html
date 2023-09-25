@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="task5.css">
+</head>
+<body>
+    <center>
+    <form name="myForm" onsubmit="validate()" method="post">
+        <table >
+            <tr>
+                <td style="width:10vw">
+                    <label for="name">Name:</label>
+                </td>
+                <td  style="width:15vw">
+                    <input type="text"  name="name" id="field1" >
+                </td>
+                <td style="width:30vw">
+                    <p id="namebox1" style="color:red; text-align:left; padding-left:1rem;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:10vw">
+                    <label for="email">Email:</label>
+                </td>
+                <td style="width:15vw">
+                    <input type="text" name="email" id="field2">
+                </td>
+                <td style="width:30vw">
+                    <p id="namebox2" style="color:red; text-align:left; padding-left:1rem;"></p>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:10vw"><label for="website">Website:</label></td>
+                <td style="width:15vw"><input type="text" name="website" id="field3"></td>
+                <td style="width:30vw"><p id="namebox3" style="color:red; text-align:left; padding-left:1rem;"></p></td>
+            </tr>
+            <tr>
+                <td style="width:10vw"><label for="msg">Message:</label></td>
+                <td style="width:15vw"><textarea rows="8" name="message" cols="50" id="field4"></textarea></td>
+                <td style="width:30vw"><p id="namebox4" style="color:red; text-align:left; padding-left:1rem; "></p></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button>Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</center>
+<script>
+    function validate(){
+        event.preventDefault();
+        let x = document.forms["myForm"]["name"].value;
+        if(x==""){
+            document.getElementById("namebox1").innerText = "This field is required";
+            document.getElementById("field1").classList.add("error");
+        }
+        else{
+            document.getElementById("namebox1").innerText = "";
+            document.getElementById("field1").classList.remove("error");
+        }
+
+        let y = document.forms["myForm"]["email"].value;
+        if(y==""){
+            document.getElementById("namebox2").innerText = "A valid email address is required";
+            document.getElementById("field2").classList.add("error");
+        }
+        else{
+            document.getElementById("namebox2").innerText = "";
+            document.getElementById("field2").classList.remove("error");
+        }
+        let s = document.forms["myForm"]["website"].value;
+        if(s==""){
+            document.getElementById("namebox3").innerText = "A valid URL is required";
+            document.getElementById("field3").classList.add("error");
+        }
+        else{
+            document.getElementById("namebox3").innerText = "";
+            document.getElementById("field3").classList.remove("error");
+        }
+        let z = document.forms["myForm"]["message"].value;
+        if(z==""){
+            document.getElementById("namebox4").innerText = "This field is required";
+            document.getElementById("field4").classList.add("error");
+        }
+        else{
+            document.getElementById("namebox4").innerText = "";
+            document.getElementById("field4").classList.remove("error");
+        }
+    }
+</script>
+</body>
+</html>

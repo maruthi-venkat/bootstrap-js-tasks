@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        tr td{
+            padding-left: 20px;
+            padding-top: 20px;
+
+        }
+        #container
+        {
+            width:94.8rem; 
+            height:60rem;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #feffd9;
+            background-image: linear-gradient(to bottom, #feffd9,#d475bf);
+        }
+        .tab
+        {
+            width: 70rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" >
+    <center>
+        <h2><font color="blue"><b>Registration form</b></font></h2>
+            <form name="myForm">
+            <table class="table-borderless tab" cellspacing="0" >
+                <tr>
+                    <td align="right">
+                        <label for="fname"><b>First Name</b></label>
+                    </td>
+                    <td>
+                        <input type="text" id="fname" name="fname" onkeyup="validate()" size="70" style="height:2rem; ">
+                        <span id="mylocation1"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="lname"><b>Last Name</b></label>
+                    </td>
+                    <td>
+                        <input type="text" id="lname" name="lname" onkeyup="validate()" size="70" style="height:2rem;">
+                        <span id="mylocation2"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="email"><b>Email</b></label>
+                    </td>
+                    <td>
+                        <input type="text" id="email" name="email" onkeyup="validate()" size="70" style="height:2rem;">
+                        <span id="mylocation3"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="pass"><b>Password</b></label>
+                    </td>
+                    <td>
+                        <input type="password" id="pass" name="password" onkeyup="validate()" size="70" style="height:2rem;">
+                        <span id="mylocation4"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="repass"><b>Re-enter Password</b></label>
+                    </td>
+                    <td>
+                        <input type="password" id="repass" name="repassword" onkeyup="validate()" size="70" style="height:2rem;">
+                        <span id="mylocation5"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" rowspan="2">
+                        <a><b>Gender:</b></a>
+                    </td>
+                    <td>
+                            <input type="radio" id="male" name="gender" value="male">
+                            <label for="male">Male</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                            <input type="radio" id="female" name="gender" value="female">
+                            <label for="female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="age"><b>Age:</b></label>
+                    </td>
+                    <td>
+                        <input type="text" id="age" name="age" onkeyup="validate()" size="70" style="height:2rem;">
+                        <span id="mylocation6"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="phno"><b>Phone Number</b></label>
+                    </td>
+                    <td>
+                        <input type="text" id="phno" name="phnumber" onkeyup="validate()" size="70" style="height:2rem;">
+                        <span id="mylocation7"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" height="50">
+                        <a><b>Address</b></a>
+                    </td>
+                    <td>
+                        <textarea name="address" onkeyup="validate()" rows="4" cols="73"></textarea>
+                        <span id="mylocation8"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="state"><b> State</b></label>
+                    </td>
+                    <td>
+                        <input type="text" id="state" name="state" onkeyup="validate()" size="70" style="height:2rem;">
+                        <span id="mylocation9"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <label for="country"><b>Country</b></label>
+                    </td>
+                    <td>
+                        <select name="country" id="country">
+                            <option value="">Choose your country</option>
+                            <option value="India">India</option>
+                            <option value="China">China</option>
+                            <option value="Russia">Russia</option>
+                            <option value="United States">United States</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><b>Languages Known</b></td>
+                    <td>
+                        <input type="checkbox" id="eng" name="English">
+                        <label for="eng">English</label>
+                        <input type="checkbox" id="kan" name="Kannada">
+                        <label for="kan">Kannada</label>
+                        <input type="checkbox" id="hin" name="Hindi">
+                        <label for="hin">Hindi</label>
+                        <input type="checkbox" id="tel" name="Telugu">
+                        <label for="tel">Telugu</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding-left:40px;">
+                        <input type="checkbox" id="declare" name="declaration" checked >
+                        <label for="declare">Hereby I declare all the given details are true</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="right" style="padding-right:10rem;">
+                        <a>Log in to </a><a href="https://www.ethnus.com" style="color:darkblue;">Ethnus</a><a> website</a>
+                    </td>
+                </tr>
+            </table>
+        
+       <br/> 
+
+       <button type="button" onclick="validate()" style="background-color: red; color:#fff; border-radius:15px; width:7rem;"><a href="#" style="color:#fff;">REGISTER</a></button>
+    </form>
+    </center>
+</div>
+    <script>
+        function validate(){
+            var msg;
+            var x=document.myForm.fname.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation1').innerHTML=msg;
+
+            var msg;
+            var x=document.myForm.lname.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation2').innerHTML=msg;
+            var msg;
+            var x=document.myForm.email.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation3').innerHTML=msg;
+            var msg;
+            var x=document.myForm.pass.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation4').innerHTML=msg;
+            var msg;
+            var x=document.myForm.repass.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR OR MISMATCH</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation5').innerHTML=msg;
+            var msg;
+            var x=document.myForm.age.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation6').innerHTML=msg;
+            var msg;
+            var x=document.myForm.phnumber.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation7').innerHTML=msg;
+            var msg;
+            var x=document.myForm.address.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation8').innerHTML=msg;
+            var msg;
+            var x=document.myForm.state.value;
+            if(x.length<5){
+                msg='<span style="color:red; font-size:1.25rem;">POOR</span>';
+            }
+            else{
+                msg='<span style="color:green; font-size:1.25rem;">GOOD</span>';
+            }
+            document.getElementById('mylocation9').innerHTML=msg;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

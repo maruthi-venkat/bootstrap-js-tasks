@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="reverse">Enter a number: </label>
+    <input type="number" id="reverse" placeholder="number">
+    <br>
+    <button type="button" onclick="rev()">Reverse</button>   
+
+    <script>
+        function rev(){
+            var x = document.getElementById("reverse").value;
+            while(x!=0)
+            {
+                document.write(x%10);
+                x-=(x%10);
+                x/=10;
+            }
+        }
+    </script>
+</body>
+</html>

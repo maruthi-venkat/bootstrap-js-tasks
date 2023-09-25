@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        var img = null;
+        var animationInterval = null; // Variable to hold the animation interval
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.position = 'relative';
+            img.style.left = '50px';
+        }
+
+        function moveRight() {
+            img.style.left = parseInt(img.style.left) + 100 + 'px';
+            if ((img.style.left) >= screenWidth) {
+                    stopAnimation();
+                    img.style.left = '-100px'; // Move the image to the left edge
+                    startAnimation();
+                }
+        }
+
+        function startAnimation() {
+            animationInterval = setInterval(moveRight, 1000); // Adjust the interval as needed (e.g., 1000ms for 1 second)
+            
+        }
+
+        function stopAnimation() {
+            clearInterval(animationInterval);
+        }
+
+        window.onload = init;
+
+    </script>
+</head>
+
+<body>
+    <form>
+        <img id="myimg" src="pngwing.com.png" />
+        <center>
+            <h2 style="color:darkblue">Click the following buttons to handle animation</h2>
+            <input type="button" value="Start" onclick="startAnimation(); " />
+            <input type="button" value="Stop" onclick="stopAnimation();" />
+        </center>
+    </form>
+</body>
+
+</html>

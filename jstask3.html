@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="no1">1st Number: </label>
+    <input type="number" id="no1" placeholder="number1">
+    <br>
+    <label for="no2">2nd Number: </label>
+    <input type="number" id="no2" placeholder="number2">
+    <br>
+    <button type="button" onclick="mul()">Multiply</button>   
+    <button type="button" onclick="div()">Divide</button> <br>
+    <p id="ans"></p>  
+
+    <script>
+        function mul(){
+            document.getElementById("ans").innerHTML=("The Result Is: <br>"+(document.getElementById("no1").value)*(document.getElementById("no2").value))
+        }
+        function div(){
+            document.getElementById("ans").innerHTML=("The Result Is: <br>"+(document.getElementById("no1").value)/(document.getElementById("no2").value))
+        }
+    </script>
+</body>
+</html>
